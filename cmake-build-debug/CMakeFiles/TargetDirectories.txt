@@ -1,0 +1,3 @@
+/home/daisy/oslab/minishell/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/daisy/oslab/minishell/cmake-build-debug/CMakeFiles/minishell.dir
+/home/daisy/oslab/minishell/cmake-build-debug/CMakeFiles/edit_cache.dir

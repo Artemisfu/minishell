@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/program/minishell/def.h
+
+E:/program/minishell/mycmd.c
+stdio.h
+-
+unistd.h
+-
+stdlib.h
+-
+dirent.h
+-
+sys/stat.h
+-
+def.h
+E:/program/minishell/def.h
+mytool.h
+E:/program/minishell/mytool.h
+
+E:/program/minishell/mytool.h
+
