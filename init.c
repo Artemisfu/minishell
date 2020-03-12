@@ -28,7 +28,7 @@ void setup()
 }
 void print_shell()
 {
-    printf("\n[minishell@%s:",usrname);
+    printf("\n[Daisy's minishell@%s:",usrname);
     printf("%s]$", curpath);
 }
 void sigint_handler(int sig)

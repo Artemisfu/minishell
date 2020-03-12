@@ -16,6 +16,17 @@ void mycd(char*des){
         getcwd(curpath,sizeof(curpath));
         return;
     }
+    char tmp[MAXLINE+1];
+    strncpy(tmp, des, 1);
+    if(!strcmp(tmp,".")){
+        memset(tmp, 0, sizeof(tmp));
+        strcpy(tmp, "cd ");
+        strcat(tmp, des);
+        system(tmp);
+        memset(curpath,0,sizeof(curpath));
+        getcwd(curpath,sizeof(curpath));
+        return;
+    }
     if(!chdir(des)){
         memset(curpath,0,sizeof(curpath));
         getcwd(curpath,sizeof(curpath));

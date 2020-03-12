@@ -11,6 +11,7 @@
 #include "init.h"
 #include "mycmd.h"
 int read_command(){
+    memset(cmdline,0,MAXLINE+1);
     if(fgets(cmdline, sizeof(cmdline), stdin) == NULL){
         return -1;
     }
@@ -22,14 +23,15 @@ int read_command(){
     return 0;
 }
 int parse_command(){
-
-    char*delim=" \n\0\t";
+    char*delim=" \n\t ";
     int smallcmd_time=0;
     char smallcmd[MAXLINE+1];
+    blank_ignore(cmdline);
     mystrtok(cmdline, ";\t",smallcmd, &smallcmd_time);
-    while(smallcmd!=NULL && strcmp(smallcmd, "")) {
+    while(smallcmd!=NULL && strcmp(smallcmd,"")) {
         char p[MAXLINE+1];
         int p_time = 0;
+
         mystrtok(smallcmd, delim,p, &p_time);
         fflush(stdout);
         if (!strcmp(p, "cd")) {

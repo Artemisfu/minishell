@@ -6,4 +6,5 @@
 #define MINISHELL_MYTOOL_H
 void mystrtok(char*, char*,char*, int*);
 int getuserdir (char *aoUserDir);
+void blank_ignore(char *p);
 #endif //MINISHELL_MYTOOL_H

@@ -20,7 +20,6 @@ void mystrtok(char*oristr, char*delim,char*token, int* time){
             }
         }
         if(j!=len_delim){
-//            printf("token:%s\n", token);
             if(mytime==*time){
                 *time+=1;
                 return;
@@ -54,4 +53,31 @@ int getuserdir (char *aoUserDir) {
         return -7;
     }
     strcpy (aoUserDir, pwdinfo->pw_dir);
+}
+void blank_ignore(char*p){
+    int len = strlen(p);
+    int check = 0;
+    char tmp[MAXLINE+1];
+    int j = 0;
+    for(int i = 0 ;i < len;i ++){
+        if((p[i] == ' ' || p[i] == '\t' || p[i] == '\n')&&i!=len-1){
+            if(i==0){
+                check = 1;
+            }
+            if (check != 1){
+                check = 1;
+                tmp[j++] = ' ';
+            }
+            else{
+                check = 1;
+            }
+        }
+        else{
+            check = 0;
+            tmp[j++]=p[i];
+        }
+    }
+    tmp[j++]=0;
+    memset(p, 0, sizeof(p));
+    strcpy(p, tmp);
 }
